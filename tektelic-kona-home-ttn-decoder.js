@@ -22,7 +22,9 @@ function Decoder(bytes, port) {
     for (var i = 0; i < bytes.length; i++) {
         // Handle temperature
         if(0x03 === bytes[i] && 0x67 === bytes[i+1]) {
-            params.temperature = 0.1 * ((bytes[i+2] << 8) | bytes[i+3]);
+            // Sign-extend to 32 bits to support negative values, by shifting 24 bits
+            // (16 too far) to the left, followed by a sign-propagating right shift:
+            params.temperature = (bytes[i+2]<<24>>16 | bytes[i+3]) / 10;
             i = i+3;
         }
         
@@ -41,11 +43,11 @@ function Decoder(bytes, port) {
         // Handle PIR activity
         if(0x0A === bytes[i] && 0x00 === bytes[i+1]) {
             params.activity = true;
-            i = i+2;
+            i = i+1;
         }
         else if(0x0A === bytes[i] && 0xFF === bytes[i+1]) {
             params.activity = false;
-            i = i+2;
+            i = i+1;
         }
         
         // Handle reed switch state

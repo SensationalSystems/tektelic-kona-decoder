@@ -28,3 +28,8 @@ This should be turned into a JSON object that looks like this:
 (actual data from my particularly chilly office)
 
 This code is MIT licenced, and we don't claim it to be excellent, pull requests are encouraged! This isn't yet complete, it doesn't yet support accelerometer payloads for example. Again, pull request!
+
+## Contributors
+Many thanks to:
+ * [avbentem](https://github.com/avbentem) for suggesting fixes to negative temperature and PIR handling
+
