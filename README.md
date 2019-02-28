@@ -2,8 +2,8 @@
 TEKTELIC Communications make small "all-in-one" LoRaWAN sensors designed for home/office use. They measure temperature, humidity, PIR activity, and more. This repo contains a decoder function to unpack the payloads of these sensors and separate out the parameters being reported. This is targetted at TTN, but with minor changes will work in other network servers or Node-RED.
 
 We sell the sensors online, here:
- * https://connectedthings.store/products/tektelic-kona-home-sensor-pir
- * https://connectedthings.store/products/tektelic-kona-home-sensor-base
+ * https://connectedthings.store/tektelic-kona-home-sensor-pir.html
+ * https://connectedthings.store/tektelic-kona-home-sensor-base.html
 
 To use this:
 * create a TTN application and register your devices using the TTN console
