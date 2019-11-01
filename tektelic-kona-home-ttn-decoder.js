@@ -41,13 +41,18 @@ function Decoder(bytes, port) {
         }
         
         // Handle PIR activity
+        //check the channel and type
         if(0x0A === bytes[i] && 0x00 === bytes[i+1]) {
+          i = i+1;
+          //check data
+          if (0x00 === bytes[i+1]) {
+             params.activity = false;
+             i = i+1;
+          }
+          else if( 0xFF === bytes[i+1]) {
             params.activity = true;
             i = i+1;
-        }
-        else if(0x0A === bytes[i] && 0xFF === bytes[i+1]) {
-            params.activity = false;
-            i = i+1;
+          }
         }
         
         // Handle reed switch state
