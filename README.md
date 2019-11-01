@@ -36,5 +36,5 @@ If you are using this codec with LoraServer then change the name of the method a
 ## Contributors
 Many thanks to:
  * [avbentem](https://github.com/avbentem) for suggesting fixes to negative temperature and PIR handling
- * [m-markovic] (https://github.com/m-markovic) PIR handling
+ * [m-markovic](https://github.com/m-markovic) PIR handling
 
