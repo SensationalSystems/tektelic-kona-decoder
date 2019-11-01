@@ -29,7 +29,12 @@ This should be turned into a JSON object that looks like this:
 
 This code is MIT licenced, and we don't claim it to be excellent, pull requests are encouraged! This isn't yet complete, it doesn't yet support accelerometer payloads for example. Again, pull request!
 
+## Note to LoraServer users
+
+If you using the codec with LoraServer then change the name of the method and the orders of paprameters to Decode(port, bytes)
+
 ## Contributors
 Many thanks to:
  * [avbentem](https://github.com/avbentem) for suggesting fixes to negative temperature and PIR handling
+ * [m-markovic] (https://github.com/m-markovic) PIR handling
 
