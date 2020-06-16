@@ -5,12 +5,12 @@ We sell the sensors online, here:
  * https://connectedthings.store/tektelic-kona-home-sensor-pir.html
  * https://connectedthings.store/tektelic-kona-home-sensor-base.html
 
-To use this:
+To use this decoder on TTN:
 * create a TTN application and register your devices using the TTN console
 * in your application, choose "Payload Formats" from the navigation
 * paste the decoder function into the textarea
 
-You can test the function by pasting in this example payload: 0367008904686400FF011D
+You can test the function by pasting in this example payload: 0100ff080400000e00ff0f04000007710000000003e8020000036700d804688b0b6700b509000000ff0135
 
 This should be turned into a JSON object that looks like this:
 ```
@@ -44,6 +44,12 @@ This code is MIT licenced, and we don't claim it to be excellent, pull requests 
 ## Note to ChirpStack (formerly LoraServer) users
 
 The requirements for ChirpStack are identical to the TTN one except for a slight change to the name of the method called and the orders of parameters Decoder(bytes, port) becomes Decode(port, bytes). There is a wrapper function included to handle this so that the same file will work on both platforms.
+
+To use this decoder in ChirpStack:
+* create a ChirpStack application
+* choose "Device-profiles" from the navigation and create a new profile.
+* Select "Codec" and paste the decoder function into the upper text area.
+* register your devices using the ChirpStack console selecting your new profile.
 
 ## Contributors
 Many thanks to:
