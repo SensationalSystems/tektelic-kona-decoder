@@ -31,7 +31,7 @@ This code is MIT licenced, and we don't claim it to be excellent, pull requests 
 
 ## Note to ChirpStack (formerly LoraServer) users
 
-If you are using this codec with ChirpStack then change the name of the method and the orders of parameters to Decode(port, bytes)
+The ChirpStack version of this codec is identical to the TTN one except for a slight change to the name of the method and the orders of parameters to Decode(port, bytes)
 
 ## Contributors
 Many thanks to:
