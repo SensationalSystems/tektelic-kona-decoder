@@ -4,7 +4,6 @@
  * https://connectedthings.store/products/tektelic-kona-home-sensor-pir
  * https://connectedthings.store/products/tektelic-kona-home-sensor-base
  * This function was created by Al Bennett at Sensational Systems - al@sensational.systems
- * Extended by Mark Dunsford
  */
 
 function bin2HexStr(arr)
