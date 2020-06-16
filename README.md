@@ -1,4 +1,4 @@
-# The Things Network decoder function for TEKTELIC sensors
+# The Things Network and ChirpStack decoder function for TEKTELIC sensors
 TEKTELIC Communications make small "all-in-one" LoRaWAN sensors designed for home/office use. They measure temperature, humidity, PIR activity, and more. This repo contains a decoder function to unpack the payloads of these sensors and separate out the parameters being reported. This is targetted at TTN, but with minor changes will work in other network servers or Node-RED.
 
 We sell the sensors online, here:
@@ -15,23 +15,35 @@ You can test the function by pasting in this example payload: 0367008904686400FF
 This should be turned into a JSON object that looks like this:
 ```
 {
-  "activity": null,
-  "battery_voltage": 2.85,
-  "bytes": "A2cAiQRoZAD/AR0=",
-  "external_input": null,
-  "humidity": 50,
-  "reed_count": null,
-  "reed_state": null,
-  "temperature": 13.700000000000001
+  "acceleration_x": 0
+  "acceleration_y": 0
+  "acceleration_z": 1
+  "activity": null
+  "activity_count": null
+  "battery_voltage": 3.09
+  "break_in": null
+  "bytes": (43) [1, 0, 255, 8, 4, 0, 0, 14, 0, 255, 15, 4, 0, 0, 7, 113, 0, 0, 0, 0, 3, 232, 2, 0, 0, 3, 103, 0, 216, 4, 104, 139, 11, 103, 0, 181, 9, 0, 0, 0, 255, 1, 53]
+  "decode_data_hex: "0x01,0x00,0xff,0x08,0x04,0x00,0x00,0x0e,0x00,0xff,0x0f,0x04,0x00,0x00,0x07,0x71,0x00,0x00,0x00,0x00,0x03,0xe8,0x02,0x00,0x00,0x03,0x67,0x00,0xd8,0x04,0x68,0x8b,0x0b,0x67,0x00,0xb5,0x09,0x00,0x00,0x00,0xff,0x01,0x35"
+  "external_input": false
+  "external_input_count": 0
+  "humidity": 69.5
+  "impact_alarm": null
+  "impact_magnitude": null
+  "light_detected": false
+  "mcu_temperature": 18.1
+  "moisture": false
+  "reed_count": 0
+  "reed_state": false
+  "temperature": 21.6
 }
 ```
-(actual data from my particularly chilly office)
+(actual data from my office)
 
 This code is MIT licenced, and we don't claim it to be excellent, pull requests are encouraged!
 
 ## Note to ChirpStack (formerly LoraServer) users
 
-The ChirpStack version of this codec is identical to the TTN one except for a slight change to the name of the method and the orders of parameters to Decode(port, bytes)
+The requirements for ChirpStack are identical to the TTN one except for a slight change to the name of the method called and the orders of parameters Decoder(bytes, port) becomes Decode(port, bytes). There is a wrapper function included to handle this so that the same file will work on both platforms.
 
 ## Contributors
 Many thanks to:
