@@ -55,4 +55,5 @@ To use this decoder in ChirpStack:
 Many thanks to:
  * [avbentem](https://github.com/avbentem) for suggesting fixes to negative temperature and PIR handling
  * [m-markovic](https://github.com/m-markovic) PIR handling
+ * [MarkSolcom](https://github.com/MarkSolcom) Accelerometer handling and other fixes
 
