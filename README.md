@@ -1,4 +1,7 @@
 # The Things Network and ChirpStack decoder function for TEKTELIC sensors
+
+**⚠️ Note: This repo is here for historical interest, Tektelic now [publishes decoders here](https://github.com/TektelicCommunications/data-converters).**
+
 TEKTELIC Communications make small "all-in-one" LoRaWAN sensors designed for home/office use. They measure temperature, humidity, PIR activity, and more. This repo contains a decoder function to unpack the payloads of these sensors and separate out the parameters being reported. This is targetted at TTN, but with minor changes will work in other network servers or Node-RED.
 
 We sell the sensors online, here:
